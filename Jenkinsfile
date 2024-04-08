@@ -15,11 +15,11 @@ pipeline {
                 script {
                     dir('/var/lib/jenkins/workspace/ansible-tf/ansible-task') {
                         sh 'pwd'
-                        sh '/path/to/terraform init'
-                        sh '/path/to/terraform validate'
+                        sh '/bin/terraform init'
+                        sh '/bin/terraform validate'
                         // sh '/path/to/terraform destroy -auto-approve'
-                        sh '/path/to/terraform plan'
-                        sh '/path/to/terraform apply -auto-approve'
+                        sh '/bin/terraform plan'
+                        sh '/bin/terraform apply -auto-approve'
                     }
                 }
             }
