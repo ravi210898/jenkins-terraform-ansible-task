@@ -13,7 +13,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    dir('/var/lib/jenkins/workspace/ansible-tf/ansible-task') {
+                    dir('/bin/terraform') {
                         sh 'pwd'
                         sh '/bin/terraform init'
                         sh '/bin/terraform validate'
