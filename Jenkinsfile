@@ -10,20 +10,19 @@ pipeline {
             }
         }
         
-        stage('Terraform Apply') {
-            steps {
-                script {
-                    dir('/var/lib/jenkins/workspace/TASK=1') {
-                        sh 'pwd'
-                        sh '/bin/terraform init'
-                        sh '/bin/terraform validate'
-                        // sh '/path/to/terraform destroy -auto-approve'
-                        sh '/bin/terraform plan'
-                        sh '/bin/terraform apply -auto-approve'
-                    }
-                }
+       stage('Terraform Apply') {
+    steps {
+        script {
+            dir('/var/lib/jenkins/workspace/TASK=1') {
+                sh 'ls -la' // Print out the contents of the directory
+                sh '/bin/terraform init'
+                sh '/bin/terraform validate'
+                sh '/bin/terraform plan'
+                sh '/bin/terraform apply -auto-approve'
             }
         }
+    }
+}
         
         stage('Ansible Deployment') {
             steps {
